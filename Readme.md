@@ -39,7 +39,13 @@ Deve criar subcalsses que herdam da classe pai
 
 Nenhuma classe deve ser forçada a depender de metodos não utlizados
 
-
 ### Dependency Inversion Principle(DIP)
+
+As classes de alto nível não devem depender das classes de baixo nível. 
+Ambas devem depender de abstração(Contratos ou Interface).
+
+
+
+
 
 

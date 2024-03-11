@@ -44,3 +44,14 @@ class FiltroInfraVermelho : Filtro {
 interface Filtro {
     fun aplicarFiltro(imagem: Imagem)
 }
+
+fun OSPImplementation() {
+    val imagem = Imagem("Foto.jpg")
+    val aplicatovoEdicaoFotos = AplicatovoEdicaoFotos()
+    aplicatovoEdicaoFotos.adicionaFiltro(FiltroVintage())
+    aplicatovoEdicaoFotos.adicionaFiltro(FiltroPretoBranco())
+    aplicatovoEdicaoFotos.adicionaFiltro(FiltroInfraVermelho())
+
+    println("Origianl = ${imagem.visualizar()}")
+    println("aplicaFiltro = ${aplicatovoEdicaoFotos.aplicaFiltro(imagem)}")
+}

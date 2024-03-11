@@ -47,3 +47,12 @@ enum class ItensCanivetes {
     LAMINA_FACA,
     LAMINA_SERRA
 }
+
+fun SRPImplementation() {
+    val objetoCortante: ObjetoCortante = when (ItensCanivetes.LAMINA_FACA) {
+        ItensCanivetes.LAMINA_TRESOURA -> Tesoura()
+        ItensCanivetes.LAMINA_FACA -> Faca()
+        ItensCanivetes.LAMINA_SERRA -> Serra()
+    }
+    println("objetoCortante = ${objetoCortante.corta()}")
+}

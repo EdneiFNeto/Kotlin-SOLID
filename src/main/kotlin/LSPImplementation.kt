@@ -49,7 +49,7 @@ open class VeiculoMotor(
     }
 
     private fun verificarDelsigado() {
-        if(!ligado) throw Exception("Veiculo desligado")
+        if (!ligado) throw Exception("Veiculo desligado")
     }
 }
 
@@ -76,4 +76,29 @@ class Bicicleta(
     override val modelo: String,
     override val ano: Int
 ) : VeiculoSemMotor(marca, modelo, ano)
+
+fun LSPImplementation() {
+    val carro = Carro(marca = "Carro", modelo = "carro", ano = 1)
+    val moto = Moto(marca = "Moto", modelo = "Moto", ano = 2)
+    val bicicleta = Bicicleta(marca = "Bicicleta", modelo = "Bicicleta", ano = 3)
+
+    val veiculos = mutableListOf<Veiculo>()
+
+    veiculos.add(carro)
+    veiculos.add(moto)
+    veiculos.add(bicicleta)
+
+    veiculos.forEach {
+        if (it is VeiculoMotor) {
+            it.ligar()
+            it.exibeInformacao()
+            it.desligar()
+        }
+
+        it.acelerar(10.0)
+        it.frear(5.0)
+        it.exibeInformacao()
+    }
+}
+
 
