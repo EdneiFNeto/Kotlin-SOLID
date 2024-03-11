@@ -36,6 +36,10 @@ programa seja afetado.
 Deve criar subcalsses que herdam da classe pai
 
 ### Interface Segregation Principle(ISP)
+
+Nenhuma classe deve ser forçada a depender de metodos não utlizados
+
+
 ### Dependency Inversion Principle(DIP)
 
 

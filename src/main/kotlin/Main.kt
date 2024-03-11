@@ -4,7 +4,15 @@ package org.example
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    LSPImplementation()
+    ISPImplement()
+}
+
+private fun ISPImplement() {
+    when (val conector: Conector = AdaptadorUSBImpl()) {
+        is ConectorMini -> conector.conectar()
+        is ConectorUSB -> conector.conectar()
+        is ConectorUSBC -> conector.conectar()
+    }
 }
 
 private fun OSPImplementation() {
@@ -39,7 +47,7 @@ private fun LSPImplementation() {
     veiculos.add(bicicleta)
 
     veiculos.forEach {
-        if(it is VeiculoMotor) {
+        if (it is VeiculoMotor) {
             it.ligar()
             it.exibeInformacao()
             it.desligar()
